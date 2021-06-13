@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -21,6 +22,9 @@ public class WebCrawlerWithDepth {
 
     public String requestCover(String url) throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url(url)

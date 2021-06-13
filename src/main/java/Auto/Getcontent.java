@@ -9,13 +9,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 /**
  *
@@ -25,6 +22,9 @@ public class Getcontent {
 
     public String getnoidung(String url) throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url(url)
@@ -105,7 +105,7 @@ public class Getcontent {
 
 //    public static void main(String[] args) throws IOException {
 //        Getcontent g = new Getcontent();
-//        String x = g.getnoidung("https://collider.com/jurassic-world-3-preview-plot-colin-trevorrow-interview/");
+//        String x = g.getnoidung("https://collider.com/tom-and-jerry-in-new-york-series-release-date-hbo-max/");
 //        System.out.println(x);
 //
 //    }

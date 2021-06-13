@@ -15,10 +15,10 @@ import java.sql.SQLException;
  */
 public class DBContent {
 
-    private final String serverName = "localhost";
-    private final String portNumber = "3306";
+    private final String serverName = "34.92.82.236";
+    private final String portNumber = "33452";
     private final String userID = "root";
-    private final String passwd = "xlxx";
+    private final String passwd = "phongpham266";
     private final String dbName = "blogauto";
 
     public Connection getConnection() throws ClassNotFoundException, SQLException {

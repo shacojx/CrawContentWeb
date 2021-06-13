@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -21,6 +22,9 @@ public class HackInterviews {
     
     public void spiderInterview1() throws IOException, InterruptedException, SQLException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url("https://collider.com/interviews/")
@@ -71,20 +75,29 @@ public class HackInterviews {
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
-            for (String xk : list_anh) {
-                String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
-                list_img_all.add(xxk);
-            }
-            String[] xxxk = noidung_final.split("\n");
-            for (String y : xxxk) {
-                list_nd_all.add(y);
-            }
-
-            for (int i = 0; i < list_nd_all.size() - 1; i++) {
-                if (list_nd_all.get(i).contains("shacojx")) {
-                    list_nd_all.set(i, list_img_all.get(0));
-                    list_img_all.remove(0);
-                } else {
+            if (list_anh != null) {
+                for (String xk : list_anh) {
+                    String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
+                    list_img_all.add(xxk);
+                }
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
+                    if (list_nd_all.get(i).contains("shacojx")) {
+                        list_nd_all.set(i, list_img_all.get(0));
+                        list_img_all.remove(0);
+                    } else {
+                        list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
+                    }
+                }
+            } else {
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
                     list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
                 }
             }
@@ -108,6 +121,9 @@ public class HackInterviews {
     
     public void spiderInterview2() throws IOException, InterruptedException, SQLException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url("https://collider.com/interviews/")
@@ -158,20 +174,29 @@ public class HackInterviews {
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
-            for (String xk : list_anh) {
-                String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
-                list_img_all.add(xxk);
-            }
-            String[] xxxk = noidung_final.split("\n");
-            for (String y : xxxk) {
-                list_nd_all.add(y);
-            }
-
-            for (int i = 0; i < list_nd_all.size() - 1; i++) {
-                if (list_nd_all.get(i).contains("shacojx")) {
-                    list_nd_all.set(i, list_img_all.get(0));
-                    list_img_all.remove(0);
-                } else {
+            if (list_anh != null) {
+                for (String xk : list_anh) {
+                    String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
+                    list_img_all.add(xxk);
+                }
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
+                    if (list_nd_all.get(i).contains("shacojx")) {
+                        list_nd_all.set(i, list_img_all.get(0));
+                        list_img_all.remove(0);
+                    } else {
+                        list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
+                    }
+                }
+            } else {
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
                     list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
                 }
             }
@@ -194,6 +219,9 @@ public class HackInterviews {
     
     public void spiderInterview3() throws IOException, InterruptedException, SQLException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url("https://collider.com/interviews/")
@@ -244,20 +272,29 @@ public class HackInterviews {
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
-            for (String xk : list_anh) {
-                String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
-                list_img_all.add(xxk);
-            }
-            String[] xxxk = noidung_final.split("\n");
-            for (String y : xxxk) {
-                list_nd_all.add(y);
-            }
-
-            for (int i = 0; i < list_nd_all.size() - 1; i++) {
-                if (list_nd_all.get(i).contains("shacojx")) {
-                    list_nd_all.set(i, list_img_all.get(0));
-                    list_img_all.remove(0);
-                } else {
+            if (list_anh != null) {
+                for (String xk : list_anh) {
+                    String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
+                    list_img_all.add(xxk);
+                }
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
+                    if (list_nd_all.get(i).contains("shacojx")) {
+                        list_nd_all.set(i, list_img_all.get(0));
+                        list_img_all.remove(0);
+                    } else {
+                        list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
+                    }
+                }
+            } else {
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
                     list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
                 }
             }
@@ -280,6 +317,9 @@ public class HackInterviews {
     
     public void spiderInterview4() throws IOException, InterruptedException, SQLException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url("https://collider.com/interviews/")
@@ -330,20 +370,29 @@ public class HackInterviews {
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
-            for (String xk : list_anh) {
-                String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
-                list_img_all.add(xxk);
-            }
-            String[] xxxk = noidung_final.split("\n");
-            for (String y : xxxk) {
-                list_nd_all.add(y);
-            }
-
-            for (int i = 0; i < list_nd_all.size() - 1; i++) {
-                if (list_nd_all.get(i).contains("shacojx")) {
-                    list_nd_all.set(i, list_img_all.get(0));
-                    list_img_all.remove(0);
-                } else {
+            if (list_anh != null) {
+                for (String xk : list_anh) {
+                    String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
+                    list_img_all.add(xxk);
+                }
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
+                    if (list_nd_all.get(i).contains("shacojx")) {
+                        list_nd_all.set(i, list_img_all.get(0));
+                        list_img_all.remove(0);
+                    } else {
+                        list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
+                    }
+                }
+            } else {
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
                     list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
                 }
             }
@@ -366,6 +415,9 @@ public class HackInterviews {
     
     public void spiderInterview5() throws IOException, InterruptedException, SQLException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url("https://collider.com/interviews/")
@@ -416,20 +468,29 @@ public class HackInterviews {
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
-            for (String xk : list_anh) {
-                String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
-                list_img_all.add(xxk);
-            }
-            String[] xxxk = noidung_final.split("\n");
-            for (String y : xxxk) {
-                list_nd_all.add(y);
-            }
-
-            for (int i = 0; i < list_nd_all.size() - 1; i++) {
-                if (list_nd_all.get(i).contains("shacojx")) {
-                    list_nd_all.set(i, list_img_all.get(0));
-                    list_img_all.remove(0);
-                } else {
+            if (list_anh != null) {
+                for (String xk : list_anh) {
+                    String xxk = "<img src=\"" + xk.trim() + "\" class=\"img-fluid\" alt=\"Responsive image\">";
+                    list_img_all.add(xxk);
+                }
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
+                    if (list_nd_all.get(i).contains("shacojx")) {
+                        list_nd_all.set(i, list_img_all.get(0));
+                        list_img_all.remove(0);
+                    } else {
+                        list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
+                    }
+                }
+            } else {
+                String[] xxxk = noidung_final.split("\n");
+                for (String y : xxxk) {
+                    list_nd_all.add(y);
+                }
+                for (int i = 0; i < list_nd_all.size() - 1; i++) {
                     list_nd_all.set(i, "<p>" + list_nd_all.get(i) + "</p>");
                 }
             }

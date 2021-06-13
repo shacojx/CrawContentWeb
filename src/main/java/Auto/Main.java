@@ -31,6 +31,7 @@ public class Main {
             HackInterviews inter = new HackInterviews();
             System.out.println("-----> Start Craw <------");
             //================
+
             tv.spiderTV1();
             movie.spiderMovie1();
             trai.spiderTrailer1();
@@ -38,8 +39,8 @@ public class Main {
             game.spiderGame1();
             rev.spiderReview1();
             inter.spiderInterview1();
+
             System.out.println("-----> End turn 1  <------");
-            //==============
             tv.spiderTV2();
             movie.spiderMovie2();
             trai.spiderTrailer2();
@@ -75,9 +76,8 @@ public class Main {
             rev.spiderReview5();
             inter.spiderInterview5();
             System.out.println("-----> End turn 5  <------");
-            //===================
             System.out.println("========= Waiting 30 phut ==========");
-            Thread.sleep(600000);
+            Thread.sleep(1800000);
         }
 
     }

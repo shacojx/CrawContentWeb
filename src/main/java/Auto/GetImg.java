@@ -7,6 +7,7 @@ package Auto;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -19,6 +20,9 @@ public class GetImg {
 
     public ArrayList<String> GetImage(String url) throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url(url)
@@ -39,17 +43,18 @@ public class GetImg {
                 .addHeader("Accept-Language", "en-US,en;q=0.9")
                 .addHeader("Connection", "close")
                 .build();
+        
         Response response = client.newCall(request).execute();
         String html_content = response.body().string();
 
         String[] list_string = html_content.split("<section class=\"article-body\" itemprop=\"articleBody\">");
         String xmen1 = list_string[1];
-        String[] list_string_2 = xmen1.split("<button class=\"sharing-btn btn-more\"");
+        String[] list_string_2 = xmen1.split("<div class=\"sharing bottom\">");
         String xmen2 = list_string_2[0];
         String[] list_string_3 = xmen2.split("\n");
         String xmen3 = "";
         for (String k : list_string_3) {
-            if (k.trim().contains("data-srcset")) {
+            if (k.trim().contains("srcset")) {
 
                 xmen3 = xmen3 + k.trim() + "\n";
 
@@ -58,33 +63,36 @@ public class GetImg {
         xmen3 = xmen3.replaceAll("/>", "");
         xmen3 = xmen3.replaceAll("\"", "");
 
-        String[] list_string_4 = xmen3.split("\n");
-        String xmen4 = "";
-        for (String j : list_string_4) {
-            String[] List_string_tmp = j.split("data-srcset=");
-            xmen4 = xmen4 + List_string_tmp[1] + "\n";
+        if (xmen3.contains("srcset=")) {
+            String[] list_string_4 = xmen3.split("\n");
+            String xmen4 = "";
+            for (String j : list_string_4) {
+                String[] List_string_tmp = j.split("srcset=");
+                xmen4 = xmen4 + List_string_tmp[1] + "\n";
+            }
+            String[] list_string_5 = xmen4.split("\n");
+            String xmen5 = "";
+            ArrayList<String> list_img = new ArrayList<>();
+            for (String po : list_string_5) {
+                String[] list_string_tmp_2 = po.split("\\?");
+                list_img.add(list_string_tmp_2[0]);
+            }
+            RemoveDuplicate rem = new RemoveDuplicate();
+            ArrayList<String> list_img_new = rem.removeDuplicates(list_img);
+//            for (String pu : list_img_new) {
+//                xmen5 = xmen5 + pu + "\n";
+//            }
+//            System.out.println(xmen5.trim());
+            return list_img_new;
+        } else {
+            return null;
         }
-        String[] list_string_5 = xmen4.split("\n");
-        String xmen5 = "";
-        ArrayList<String> list_img = new ArrayList<>();
-        for (String po : list_string_5) {
-            String[] list_string_tmp_2 = po.split("\\?");
-            list_img.add(list_string_tmp_2[0]);
-        }
-        RemoveDuplicate rem = new RemoveDuplicate();
-        ArrayList<String> list_img_new = rem.removeDuplicates(list_img);
-//        for(String pu : list_img_new){
-//            xmen5 = xmen5 +pu +"\n";
-//        }
-//        System.out.println(xmen5.trim());
-        return list_img_new;
 
     }
 
 //    public static void main(String[] args) throws IOException {
 //        GetImg g = new GetImg();
-//        g.GetImage("https://collider.com/jurassic-world-3-preview-plot-colin-trevorrow-interview/");
+//        g.GetImage("https://collider.com/rainbow-six-extraction-release-date-gameplay-trailer/");
 //
 //    }
-
 }
