@@ -1,3 +1,4 @@
+Auto\GenID.class
 Auto\New.class
 Auto\HackTrailers.class
 Auto\HackNetflix.class
@@ -9,6 +10,7 @@ Auto\Getcontent.class
 Auto\HackInterviews.class
 Auto\WebCrawlerWithDepth.class
 Auto\RemoveDuplicate.class
+Auto\UpdateID.class
 Auto\DBContent.class
 Auto\HackReviews.class
 Auto\HackMovie.class

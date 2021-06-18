@@ -20,6 +20,12 @@ public class DBContent {
     private final String userID = "root";
     private final String passwd = "phongpham266";
     private final String dbName = "blogauto";
+    //========================================
+//    private final String portNumber = "3306";
+//    private final String userID = "root";
+//    private final String passwd = "7122461311";
+//    private final String serverName = "localhost";
+//    private final String dbName = "blogauto";
 
     public Connection getConnection() throws ClassNotFoundException, SQLException {
         String url = "jdbc:mysql://" + serverName + ":" + portNumber + "/" + dbName + "?useUnicode=true&characterEncoding=UTF-8&useTimezone=true&serverTimezone=GMT%2B7";

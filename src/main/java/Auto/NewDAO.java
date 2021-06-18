@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -72,6 +73,76 @@ public class NewDAO {
         return null;
     }
     
+    public New getNewById(String id) throws SQLException {
+        try {
+            String query = "SELECT * FROM `blogauto`.`news` WHERE `id` = ?";
+            conn = new DBContent().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                New ne = new New(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+                        rs.getString(5), rs.getString(6), rs.getString(7));
+                return ne;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return null;
+    }
+    
+    public void Update(New a, String id) throws SQLException {
+       
+        try {
+            String query = "UPDATE `blogauto`.`news` SET `id` = ? WHERE `id`=?;";
+            conn = new DBContent().getConnection();
+            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setString(1, id);
+            ps.setString(2, a.getId());
+
+            ps.executeUpdate();
+            rs = ps.getGeneratedKeys();
+
+            
+        } catch (Exception ex) {
+            Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+       
+    }
+    
+    public ArrayList<New> getAll() throws SQLException {
+        try {
+            String query = "SELECT * FROM  `blogauto`.`news`;";
+            conn = new DBContent().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            ArrayList<New> list_new = new ArrayList<>();
+            while (rs.next()) {
+                New ne = new New(rs.getString(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+                list_new.add(ne);
+            }
+            return list_new;
+        } catch (Exception ex) {
+            Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+        return null;
+    }
     
     
     

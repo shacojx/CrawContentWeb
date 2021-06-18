@@ -109,7 +109,14 @@ public class HackMovie {
             java.util.Date date1 = new java.util.Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String startDate = sdf1.format(date1);
-            String id = startDate.replaceAll(" ", "");
+            GenID gen = new GenID();
+            New nx = new New();
+            String id = "";
+            do {
+                id = gen.genStr();
+                nx = nedao.getNewById(id);
+
+            } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
             System.out.println("[Movie 1] Inert db done");
@@ -208,7 +215,14 @@ public class HackMovie {
             java.util.Date date1 = new java.util.Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String startDate = sdf1.format(date1);
-            String id = startDate.replaceAll(" ", "");
+            GenID gen = new GenID();
+            New nx = new New();
+            String id = "";
+            do {
+                id = gen.genStr();
+                nx = nedao.getNewById(id);
+
+            } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
             System.out.println("[Movie 2] Inert db done");
@@ -307,7 +321,14 @@ public class HackMovie {
             java.util.Date date1 = new java.util.Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String startDate = sdf1.format(date1);
-            String id = startDate.replaceAll(" ", "");
+            GenID gen = new GenID();
+            New nx = new New();
+            String id = "";
+            do {
+                id = gen.genStr();
+                nx = nedao.getNewById(id);
+
+            } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
             System.out.println("[Movie 3] Inert db done");
@@ -404,7 +425,14 @@ public class HackMovie {
             java.util.Date date1 = new java.util.Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String startDate = sdf1.format(date1);
-            String id = startDate.replaceAll(" ", "");
+            GenID gen = new GenID();
+            New nx = new New();
+            String id = "";
+            do {
+                id = gen.genStr();
+                nx = nedao.getNewById(id);
+
+            } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
             System.out.println("[Movie 4] Inert db done");
@@ -502,7 +530,14 @@ public class HackMovie {
             java.util.Date date1 = new java.util.Date();
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String startDate = sdf1.format(date1);
-            String id = startDate.replaceAll(" ", "");
+            GenID gen = new GenID();
+            New nx = new New();
+            String id = "";
+            do {
+                id = gen.genStr();
+                nx = nedao.getNewById(id);
+
+            } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
             System.out.println("[Movie 5] Inert db done");
