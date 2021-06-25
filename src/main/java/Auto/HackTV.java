@@ -57,6 +57,7 @@ public class HackTV {
         String[] list_c = list_b[0].split("/");
         String url = list_c[1];
         String link = "https://collider.com/" + url;
+//        String link = "https://collider.com/batman-long-halloween-part-1-images-catwoman/";
 
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);

@@ -32,52 +32,193 @@ public class Main {
             System.out.println("-----> Start Craw <------");
             //================
 
-            tv.spiderTV1();
-            movie.spiderMovie1();
-            trai.spiderTrailer1();
-            net.spiderNet1();
-            game.spiderGame1();
-            rev.spiderReview1();
-            inter.spiderInterview1();
-
+            try {
+                tv.spiderTV1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                movie.spiderMovie1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                trai.spiderTrailer1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                net.spiderNet1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                game.spiderGame1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                rev.spiderReview1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                inter.spiderInterview1();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
             System.out.println("-----> End turn 1  <------");
-            tv.spiderTV2();
-            movie.spiderMovie2();
-            trai.spiderTrailer2();
-            net.spiderNet2();
-            game.spiderGame2();
-            rev.spiderReview2();
-            inter.spiderInterview2();
+
+            try {
+                tv.spiderTV2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                movie.spiderMovie2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                trai.spiderTrailer2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                net.spiderNet2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                game.spiderGame2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                rev.spiderReview2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                inter.spiderInterview2();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
             System.out.println("-----> End turn 2  <------");
-            //===============
-            tv.spiderTV3();
-            movie.spiderMovie3();
-            trai.spiderTrailer3();
-            net.spiderNet3();
-            game.spiderGame3();
-            rev.spiderReview3();
-            inter.spiderInterview3();
+
+            try {
+                tv.spiderTV3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                movie.spiderMovie3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                trai.spiderTrailer3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                net.spiderNet3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                game.spiderGame3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                rev.spiderReview3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                inter.spiderInterview3();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
             System.out.println("-----> End turn 3  <------");
-            //==================
-            tv.spiderTV4();
-            movie.spiderMovie4();
-            trai.spiderTrailer4();
-            net.spiderNet4();
-            game.spiderGame4();
-            rev.spiderReview4();
-            inter.spiderInterview4();
+
+            try {
+                tv.spiderTV4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                movie.spiderMovie4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                trai.spiderTrailer4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                net.spiderNet4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                game.spiderGame4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                rev.spiderReview4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                inter.spiderInterview4();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
             System.out.println("-----> End turn 4  <------");
-            //====================
-            tv.spiderTV5();
-            movie.spiderMovie5();
-            trai.spiderTrailer5();
-            net.spiderNet5();
-            game.spiderGame5();
-            rev.spiderReview5();
-            inter.spiderInterview5();
+
+            try {
+                tv.spiderTV5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                movie.spiderMovie5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                trai.spiderTrailer5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                net.spiderNet5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                game.spiderGame5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                rev.spiderReview5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
+            try {
+                inter.spiderInterview5();
+            } catch (Exception e) {
+                System.out.println("[*] Load bai moi");
+            }
             System.out.println("-----> End turn 5  <------");
             System.out.println("========= Waiting 30 phut ==========");
             Thread.sleep(1800000);
+
         }
 
     }

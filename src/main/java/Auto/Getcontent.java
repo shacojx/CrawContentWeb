@@ -48,7 +48,7 @@ public class Getcontent {
         Response response = client.newCall(request).execute();
         String html_content = response.body().string();
 
-        String[] list_string = html_content.split("<section class=\"article-body\" itemprop=\"articleBody\">");
+        String[] list_string = html_content.split("class=\"article-body\" itemprop=\"articleBody\">");
         String xmen1 = list_string[1];
         String[] list_string_2 = xmen1.split("<button class=\"sharing-btn btn-more\"");
         String xmen2 = list_string_2[0];
