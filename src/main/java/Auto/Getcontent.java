@@ -88,8 +88,20 @@ public class Getcontent {
             }
 
         }
+        
+        String xmen5 = "";
+        String[] list_String_5 = xmen4.split("\n");
+        for(String q : list_String_5){
+            if(q.contains("googletag") || q.contains("function") || q.contains("getElementsByTagName") 
+                    || q.contains("createElement") || q.contains("className") || q.contains("js.") 
+                    || q.contains("js =") || q.contains("insertBefore") || q.contains("exco-player") || q.contains("'script'") || q.contains("(document")){
+                xmen5 = xmen5 + "\n";
+            }else{
+                xmen5 = xmen5 + q + "\n";
+            }
+        }
 
-        return xmen4.trim();
+        return xmen5.trim();
 
     }
 
