@@ -8,6 +8,7 @@ Auto\GetImg.class
 Auto\HackTV.class
 Auto\Getcontent.class
 Auto\HackInterviews.class
+Auto2\Getnd.class
 Auto\UpDate.class
 Auto\WebCrawlerWithDepth.class
 Auto\RemoveDuplicate.class
