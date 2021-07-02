@@ -121,6 +121,32 @@ public class NewDAO {
        
     }
     
+    public void Updatend(String id, String nd) throws SQLException {
+       
+        try {
+            String query = "UPDATE `blogauto`.`news` SET `context` = ? WHERE `id`=?;";
+            conn = new DBContent().getConnection();
+            ps = conn.prepareStatement(query);
+            ps = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+
+            ps.setString(1, nd);
+            ps.setString(2, id);
+
+            ps.executeUpdate();
+            rs = ps.getGeneratedKeys();
+
+            
+        } catch (Exception ex) {
+            Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
+
+        } finally {
+            rs.close();
+            ps.close();
+            conn.close();
+        }
+       
+    }
+    
     public ArrayList<New> getAll() throws SQLException {
         try {
             String query = "SELECT * FROM  `blogauto`.`news`;";
