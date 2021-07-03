@@ -60,7 +60,10 @@ public class HackMovie {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[Movie 1] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][Movie 1] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -70,7 +73,10 @@ public class HackMovie {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[Movie 1] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][Movie 1] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -119,7 +125,7 @@ public class HackMovie {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
-            System.out.println("[Movie 1] Inert db done");
+            System.out.println("["+startDate+"][collider.com][Movie 1] Inert db done");
         }
 
     }
@@ -166,7 +172,10 @@ public class HackMovie {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[Movie 2] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][Movie 2] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -176,7 +185,10 @@ public class HackMovie {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[Movie 2] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][Movie 2] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -225,7 +237,7 @@ public class HackMovie {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
-            System.out.println("[Movie 2] Inert db done");
+            System.out.println("["+startDate+"][collider.com][Movie 2] Inert db done");
         }
 
     }
@@ -272,7 +284,10 @@ public class HackMovie {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[Movie 3] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][Movie 3] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -282,7 +297,10 @@ public class HackMovie {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[Movie 3] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][Movie 3] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -331,7 +349,7 @@ public class HackMovie {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
-            System.out.println("[Movie 3] Inert db done");
+            System.out.println("["+startDate+"][collider.com][Movie 3] Inert db done");
         }
 
     }
@@ -377,7 +395,10 @@ public class HackMovie {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[Movie 4] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][Movie 4] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -387,7 +408,10 @@ public class HackMovie {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[Movie 4] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][Movie 4] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -435,7 +459,7 @@ public class HackMovie {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
-            System.out.println("[Movie 4] Inert db done");
+            System.out.println("["+startDate+"][collider.com][Movie 4] Inert db done");
         }
 
     }
@@ -481,7 +505,10 @@ public class HackMovie {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[Movie 5] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][Movie 5] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -491,7 +518,10 @@ public class HackMovie {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[Movie 5] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][Movie 5] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -540,7 +570,7 @@ public class HackMovie {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "Movie News", cover);
             nedao.insertNews(news);
-            System.out.println("[Movie 5] Inert db done");
+            System.out.println("["+startDate+"][collider.com][Movie 5] Inert db done");
         }
 
     }

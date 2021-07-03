@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,7 @@ public class NewDAO {
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
-    
+
     public void insertNews(New ne) throws SQLException {
         try {
             String query = "INSERT INTO `blogauto`.`news` "
@@ -43,14 +44,17 @@ public class NewDAO {
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
         } catch (Exception ex) {
-            Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][*] Insert Done");
         } finally {
             rs.close();
             ps.close();
             conn.close();
         }
     }
-    
+
     public New getNewByTitle(String title) throws SQLException {
         try {
             String query = "SELECT * FROM `blogauto`.`news` WHERE `title` = ? ORDER BY  date desc;";
@@ -72,7 +76,7 @@ public class NewDAO {
         }
         return null;
     }
-    
+
     public New getNewById(String id) throws SQLException {
         try {
             String query = "SELECT * FROM `blogauto`.`news` WHERE `id` = ?";
@@ -94,9 +98,9 @@ public class NewDAO {
         }
         return null;
     }
-    
+
     public void Update(New a, String id) throws SQLException {
-       
+
         try {
             String query = "UPDATE `blogauto`.`news` SET `id` = ? WHERE `id`=?;";
             conn = new DBContent().getConnection();
@@ -109,7 +113,6 @@ public class NewDAO {
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
 
-            
         } catch (Exception ex) {
             Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
 
@@ -118,11 +121,11 @@ public class NewDAO {
             ps.close();
             conn.close();
         }
-       
+
     }
-    
+
     public void Updatend(String id, String nd) throws SQLException {
-       
+
         try {
             String query = "UPDATE `blogauto`.`news` SET `context` = ? WHERE `id`=?;";
             conn = new DBContent().getConnection();
@@ -135,7 +138,6 @@ public class NewDAO {
             ps.executeUpdate();
             rs = ps.getGeneratedKeys();
 
-            
         } catch (Exception ex) {
             Logger.getLogger(NewDAO.class.getName()).log(Level.SEVERE, null, ex);
 
@@ -144,9 +146,9 @@ public class NewDAO {
             ps.close();
             conn.close();
         }
-       
+
     }
-    
+
     public ArrayList<New> getAll() throws SQLException {
         try {
             String query = "SELECT * FROM  `blogauto`.`news`;";
@@ -169,7 +171,5 @@ public class NewDAO {
         }
         return null;
     }
-    
-    
-    
+
 }

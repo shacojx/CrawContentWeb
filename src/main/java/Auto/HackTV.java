@@ -62,7 +62,10 @@ public class HackTV {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[TV 1] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][TV 1] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -72,7 +75,10 @@ public class HackTV {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[TV 1] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][TV 1] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -121,7 +127,7 @@ public class HackTV {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "TV News", cover);
             nedao.insertNews(news);
-            System.out.println("[TV 1] Inert db done");
+            System.out.println("["+startDate+"][collider.com][TV 1] Inert db done");
         }
 
     }
@@ -167,7 +173,10 @@ public class HackTV {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[TV 2] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][TV 2] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -177,7 +186,10 @@ public class HackTV {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[TV 2] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][TV 2] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -226,7 +238,7 @@ public class HackTV {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "TV News", cover);
             nedao.insertNews(news);
-            System.out.println("[TV 2] Inert db done");
+            System.out.println("["+startDate+"][collider.com][TV 2] Inert db done");
         }
 
     }
@@ -272,7 +284,10 @@ public class HackTV {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[TV 3] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][TV 3] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -282,7 +297,10 @@ public class HackTV {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[TV 3] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][TV 3] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -331,7 +349,7 @@ public class HackTV {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "TV News", cover);
             nedao.insertNews(news);
-            System.out.println("[TV 3] Inert db done");
+            System.out.println("["+startDate+"][collider.com][TV 3] Inert db done");
         }
 
     }
@@ -377,7 +395,10 @@ public class HackTV {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[TV 4] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][TV 4] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -387,7 +408,10 @@ public class HackTV {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[TV 4] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][TV 4] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -436,7 +460,7 @@ public class HackTV {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "TV News", cover);
             nedao.insertNews(news);
-            System.out.println("[TV 4] Inert db done");
+            System.out.println("["+startDate+"][collider.com][TV 4] Inert db done");
         }
 
     }
@@ -482,7 +506,10 @@ public class HackTV {
         NewDAO nedao = new NewDAO();
         New ne = nedao.getNewByTitle(title);
         if (ne != null) {
-            System.out.println("[TV 5] Chua co bai moi");
+            java.util.Date date1 = new java.util.Date();
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate = sdf1.format(date1);
+            System.out.println("[" + startDate + "][collider.com][TV 5] Don't have last news");
         } else {
             Thread.sleep(1000);
             Getcontent getnd = new Getcontent();
@@ -492,7 +519,10 @@ public class HackTV {
             getnd.getnoidung(link);
             WebCrawlerWithDepth wc = new WebCrawlerWithDepth();
             String cover = wc.requestCover(link);
-            System.out.println("[TV 5] Get Bai Moi");
+            java.util.Date date11 = new java.util.Date();
+            SimpleDateFormat sdf11 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String startDate11 = sdf11.format(date11);
+            System.out.println("["+startDate11+"][collider.com][TV 5] Get Last News");
             GetImg getimg = new GetImg();
             String noidung_final = getnd.getnoidung(link);
             ArrayList<String> list_anh = getimg.GetImage(link);
@@ -541,7 +571,7 @@ public class HackTV {
             } while (nx != null);
             New news = new New(id, title, "...", noidung_all, startDate, "TV News", cover);
             nedao.insertNews(news);
-            System.out.println("[TV 5] Inert db done");
+            System.out.println("["+startDate+"][collider.com][TV 5] Inert db done");
         }
 
     }

@@ -6,6 +6,7 @@
 package Auto2;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -16,8 +17,11 @@ import okhttp3.Response;
  */
 public class Getnd {
 
-    public static void getnoidung(String url) throws IOException {
+    public String getnoidung(String url) throws IOException {
         OkHttpClient client = new OkHttpClient().newBuilder()
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
         Request request = new Request.Builder()
                 .url(url)
@@ -95,14 +99,12 @@ public class Getnd {
             }
         }
         
-        
-        
-        System.out.println(xmen5.trim());
+        return xmen5.trim();
 
         
     }
     
-    public static int demkytu(String string, char kytu) {
+    public int demkytu(String string, char kytu) {
         int count = 0;
         for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) == kytu) {
