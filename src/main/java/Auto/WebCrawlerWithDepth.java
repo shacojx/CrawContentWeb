@@ -48,7 +48,7 @@ public class WebCrawlerWithDepth {
         Response response = client.newCall(request).execute();
         String html_content = response.body().string();
         String[] list_s = html_content.split("as=\"image\"><link rel=\"preload\"");
-        String[] list_a = list_s[0].split("href=");
+        String[] list_a = list_s[1].split("href=");
         String xx = list_a[2].replaceAll("\"", "");
         String cover = xx.split("\\?")[0].trim();
         return cover;
